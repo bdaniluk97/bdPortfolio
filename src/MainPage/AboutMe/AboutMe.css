@@ -1,0 +1,29 @@
+#aboutMe {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sub-page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin: 2rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #666;
+}

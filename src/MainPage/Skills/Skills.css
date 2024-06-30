@@ -1,0 +1,90 @@
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  min-width: 35%;
+}
+
+.skill-element {
+  display: flex;
+  align-items: baseline;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  justify-content: space-between;
+  margin: 15px;
+
+}
+
+.skill-element:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* margin-bottom: 1rem; */
+}
+
+.skill-level {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.skill-level .circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.skill-level .circle.filled {
+  background-color: #3394fb;
+}
+
+.skills-panel {
+  width: 100%;
+  display: flex;
+justify-content: space-around;
+  margin-top: 15px;
+}
+
+.skill-category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  /* border-bottom: #333 1px solid; */
+  border-bottom: 2.5px solid #3394fb;
+  margin: 15px;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    min-width: 80%;
+  }
+
+  .skills-panel {
+    flex-direction: column;
+  }
+}

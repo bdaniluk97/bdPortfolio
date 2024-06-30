@@ -1,0 +1,81 @@
+.subtitle {
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+#title {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+#title::before,
+#title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#title::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+#title::after {
+  width: 0.1em;
+  background: rgb(255, 255, 255);
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.downwardArrow {
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  height: 30px;
+  width: 30px;
+  border-bottom: 10px solid rgba(114, 114, 114, 0.5);
+  border-right: 10px solid rgba(114, 114, 114, 0.5);
+  transform: rotate(45deg) !important;
+  transition: 250ms ease-in-out;
+}
+
+.downwardArrow:hover {
+  border-bottom: 10px solid rgba(114, 114, 114, 0.9);
+  border-right: 10px solid rgba(114, 114, 114, 0.9);
+}
+
+#scrollDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

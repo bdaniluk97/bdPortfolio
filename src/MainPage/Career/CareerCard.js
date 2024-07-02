@@ -39,9 +39,11 @@ const JobDetails = ({ constName, position, t }) => {
   }
 
   return (
-    <div className={`${cardClass} ${position}`} id={constName} >
+    <div className={`${cardClass} ${position}`} id={constName}>
       <div className="title">{job.title} - {job.constName}</div>
-      <div className="description">{t(job.description)}</div>
+      <div className="description" style={{ whiteSpace: 'pre-line', lineHeight: '1.5' }}>
+        {t(job.description)}
+      </div>
       <div className="location">{t(job.location)}</div>
       <div className="employment-period">
         {job.employmentPeriod[0]} - {t(job.employmentPeriod[1])}
@@ -49,7 +51,7 @@ const JobDetails = ({ constName, position, t }) => {
       <div className="techStack">
         {job.techStack.map((tech, index) => (
           <div key={index} className="tech-item">
-            <img src={`/images/${tech.icon}`} alt={tech.techName} />
+            <img src={`${process.env.PUBLIC_URL}/images/${tech.icon}`} alt={tech.techName} />
             <span>{tech.techName}</span>
           </div>
         ))}

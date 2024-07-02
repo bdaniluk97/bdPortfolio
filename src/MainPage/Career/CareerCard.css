@@ -89,6 +89,17 @@
   margin-right: 0.3rem;
 }
 
+.career-card .description {
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.career-card .description p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+
 @media (max-width: 768px) {
   .career-card {
     width: 80%;

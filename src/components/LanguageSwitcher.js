@@ -20,10 +20,10 @@ function LanguageSwitcher() {
   return (
     <div className="language-switcher">
       <button onClick={() => changeLanguage('en')} className="flag-button">
-        <img src="/images/english-flag.svg" alt="English" className="flag-icon" />
+        <img src={`${process.env.PUBLIC_URL}/images/english-flag.svg`} alt="English" className="flag-icon" />
       </button>
       <button onClick={() => changeLanguage('pl')} className="flag-button">
-        <img src="/images/polish-flag.svg" alt="Polish" className="flag-icon" />
+        <img src={`${process.env.PUBLIC_URL}/images/polish-flag.svg`} alt="Polish" className="flag-icon" />
       </button>
     </div>
   );

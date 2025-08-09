@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: 35%;
+  width: 40%;
   height: auto;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -35,7 +35,7 @@
 }
 
 .career-card.card-showed.career-left {
-  transform: translateX(-48%);
+  transform: translateX(-38%);
 }
 
 .career-card.career-right {
@@ -43,7 +43,7 @@
 }
 
 .career-card.card-showed.career-right {
-  transform: translateX(48%);
+  transform: translateX(38%);
 }
 
 .title {

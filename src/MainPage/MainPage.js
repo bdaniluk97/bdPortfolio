@@ -6,6 +6,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import Skills from "./Skills/Skills";
 import AboutMe from "./AboutMe/AboutMe";
 import ContactMe from "./ContactMe/ContactMe.js";
+import Projects from "./Projects/Projects.js"
 
 export function MainPage() {
   return (
@@ -19,6 +20,7 @@ export function MainPage() {
         <div className="wave"/>
         </div>
         <Career />
+        <Projects/>
         <Skills />
         <AboutMe />
         <div className="wave-holder">

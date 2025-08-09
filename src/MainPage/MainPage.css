@@ -1,10 +1,15 @@
 .wave-holder {
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   background-color: #f5f5f5;
 }
 
 .wave {
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transform: translateY(-10px);
   width: 200%;
   --size: 40px;
   --m: 0.5;

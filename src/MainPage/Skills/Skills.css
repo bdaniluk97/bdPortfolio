@@ -66,7 +66,7 @@
 .skills-panel {
   width: 100%;
   display: flex;
-justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 15px;
 }
 
@@ -74,7 +74,6 @@ justify-content: space-around;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  /* border-bottom: #333 1px solid; */
   border-bottom: 2.5px solid #3394fb;
   margin: 15px;
 }

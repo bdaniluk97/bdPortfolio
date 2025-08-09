@@ -4,6 +4,13 @@
   right: 1rem;
   display: flex;
   gap: 10px;
+  z-index: 10;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); 
+  backdrop-filter: blur(4px);
 }
 
 .flag-button {
@@ -11,6 +18,11 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.flag-button:hover {
+  transform: scale(1.1);
 }
 
 .flag-icon {

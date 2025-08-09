@@ -1,67 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { withTranslation } from 'react-i18next';
+import { withTranslation } from "react-i18next";
 import "./CareerCard.css";
 import { jobData } from "../../Data";
+import useVisibilityOnScroll from "./hooks/use-visibility-on-scroll";
+import TechStack from "./TechStack";
 
-const JobDetails = ({ constName, position, t }) => {
+const CareerCardContent = ({ constName, position, t }) => {
   const [job, setJob] = useState(null);
+  const isVisible = useVisibilityOnScroll(constName);
 
   useEffect(() => {
-    const foundJob = jobData.find(job => job.constName === constName);
-    if (foundJob) {
-      setJob(foundJob);
-    }
+    const foundJob = jobData.find((job) => job.constName === constName);
+    setJob(foundJob || null);
   }, [constName]);
 
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    function handleScroll() {
-      const careerElement = document.getElementById(constName);
-      if (careerElement) {
-        const { top, bottom } = careerElement.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        if (top < windowHeight - 100 && bottom > 0) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const cardClass = isVisible ? "career-card card-showed" : "career-card";
-
-  if (!job) {
-    return <div>Loading...</div>;
-  }
+  if (!job) return <div>{t('laodingCareerCard')}</div>;
 
   return (
-    <div className={`${cardClass} ${position}`} id={constName}>
+    <div className={`career-card ${isVisible ? "card-showed" : ""} ${position}`} id={constName}>
       <div className="title">{job.title} - {job.constName}</div>
-      <div className="description" style={{ whiteSpace: 'pre-line', lineHeight: '1.5' }}>
+
+      <div className="description" style={{ whiteSpace: "pre-line", lineHeight: 1.5 }}>
         {t(job.description)}
       </div>
+
       <div className="location">{t(job.location)}</div>
+
       <div className="employment-period">
         {job.employmentPeriod[0]} - {t(job.employmentPeriod[1])}
       </div>
-      <div className="techStack">
-        {job.techStack.map((tech, index) => (
-          <div key={index} className="tech-item">
-            <img src={`${process.env.PUBLIC_URL}/images/${tech.icon}`} alt={tech.techName} />
-            <span>{tech.techName}</span>
-          </div>
-        ))}
-      </div>
+
+      <TechStack stack={job.techStack} />
     </div>
   );
 };
 
-function CareerCard({ t, info }) {
-  return <JobDetails constName={info.constName} position={info.position} t={t} />;
-}
+const CareerCard = ({ t, info }) => (
+  <CareerCardContent constName={info.constName} position={info.position} t={t} />
+);
 
 export default withTranslation()(CareerCard);

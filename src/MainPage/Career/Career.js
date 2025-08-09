@@ -8,13 +8,18 @@ function Career({ t }) {
     <div className="mainContainer " >
       <div id="career">
         <div className="sub-page-title">{t('career')}</div>
+
         {<CareerCard info={{
-          constName: 'DCLOG',
+          constName: 'ARISTOCRAT',
           position: 'career-left'
         }} />}
         {<CareerCard info={{
-          constName: 'NETTOM',
+          constName: 'DCLOG',
           position: 'career-right'
+        }} />}
+        {<CareerCard info={{
+          constName: 'NETTOM',
+          position: 'career-left'
         }} />}
       </div>
     </div>
